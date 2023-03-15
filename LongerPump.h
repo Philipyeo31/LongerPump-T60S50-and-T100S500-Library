@@ -74,7 +74,7 @@ void run(int address, int speed /*RPM in units of 0.1. e.g 60.0RPM is 600*/, flo
   pumpStop[0] = 233; //start flag
   pumpStop[1] = address; //Address for pump
   pumpStop[2] = 6; // instructions to the pump (PDU) to run is always 6 byte long
-  pumpStop[3] = 8 7; //W ascii HEX code but in base 10 INT
+  pumpStop[3] = 87; //W ascii HEX code but in base 10 INT
   pumpStop[4] = 74; //J ascii HEX code but in base 10 INT
   pumpStop[5] = speed_first_byte; //speed first byte
   pumpStop[6] = speed_second_byte; //speed second byte
