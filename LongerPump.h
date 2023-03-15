@@ -62,7 +62,7 @@ void run(int address, int speed /*RPM in units of 0.1. e.g 60.0RPM is 600*/, flo
 
   //send instructions to pump
 
-  if (sentFlag = false){
+  if (sentFlag == false){
     for (int i=0; i<=9; i++){
       Serial.write(sendToPump[i]);
       if (i==9){
@@ -71,6 +71,7 @@ void run(int address, int speed /*RPM in units of 0.1. e.g 60.0RPM is 600*/, flo
     }
   }
 
+  //stop instructions
   pumpStop[0] = 233; //start flag
   pumpStop[1] = address; //Address for pump
   pumpStop[2] = 6; // instructions to the pump (PDU) to run is always 6 byte long
@@ -84,9 +85,6 @@ void run(int address, int speed /*RPM in units of 0.1. e.g 60.0RPM is 600*/, flo
 
 
   if (revolutions > 0){
-    //stop instructions
-
-
     delay(runDurationms);
 
     //send code to pump
