@@ -1,7 +1,25 @@
 # LongerPump-T60S50-and-T100S500-Library
-Simplifying control of RS485 versions of T60S50 and T100S500 PCB for LongerPump pumps
+Simplifying control of RS485 versions of T60S50 and T100S500 PCB for LongerPump pumps on the Arduino
 
-## How To Use
+## How to Set Up
+Add this zip file and it as a library into an Arduino IDE.
+Be sure to include the function by using `#include<LongerPump.h>`
+
+Under the `setup{}` function add in `Serial.begin(9600, SERIAL_8E1);` 
+
+```
+#include <LongerPump.h>
+
+
+void setup() {
+  Serial.begin(9600, SERIAL_8E1);
+  }
+  
+```
+
+
+
+## Functions
 Currently there are only 2 fuctions working. To run, and to stop. 
 
 The functions are as follows: 
@@ -23,10 +41,10 @@ The functions are as follows:
 `stop(int address)`
 - `address` is an integer, which can be set following the instruction manual for the pumps. 
 
-<details><summary> ## Code Explanation </summary>
+<details><summary> Code Explanation </summary>
 <p>
 
-### I will work on these tomorrow!
+I will work on these tomorrow!
 
 </p>
-</details>
+## </details>
