@@ -1,9 +1,9 @@
 //byte example[] = {EF, addr, len, W, J, speed1stbyte, speed2ndbyte, full/normal speed and start/stop, dir, xor};
 // example[] ={0xE9, 0x01, 0x06, 0x57, 0x4A, 0x01, 0xF4, 0x01, 0x01, 0xEF}; 
 byte example[] = { 233, 1, 6, 87, 74, 1, 244, 1, 1, 239 }; //example in dec (base10)
-byte sendToPump[] = {};
-byte exampleStop[] = { 0xE9, 0x01, 0x06, 0x57, 0x4A, 0x01, 0xF4, 0x00, 0x01, 0xEE };
-byte pumpStop[] = {};
+byte sendToPump[10] = {};
+byte exampleStop[10] = { 0xE9, 0x01, 0x06, 0x57, 0x4A, 0x01, 0xF4, 0x00, 0x01, 0xEE };
+byte pumpStop[10] = {};
 byte receivedByte[] = {};
 
 
@@ -47,7 +47,7 @@ void run(int address, int speed /*RPM in units of 0.1. e.g 60.0RPM is 600*/, flo
     int xorReceivedByte = 0;
     xorReceivedByte = address ^ 2 ^ 87 ^ 74;
 
-    sendToPump[] = {};
+    sendToPump[10] = {};
 
     //start instructions
     sendToPump[0] = 233; //start flag
@@ -111,7 +111,7 @@ void stop(int address) {
     int xorCheckStop = 0;
     xorCheckStop = address ^ 6 ^ 87 ^ 74 ^ 0 ^ 0 ^ 0 ^ 0;
 
-    pumpStop[] = {};
+    pumpStop[10] = {};
 
     //stop instructions
     pumpStop[0] = 233; //start flag
